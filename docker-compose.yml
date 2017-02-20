@@ -1,0 +1,15 @@
+
+version: '2'
+
+services:
+  mongodb:
+    image: mongo
+    ports: 
+      - 27010:27017
+  employeedb:
+    image: employeedb:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
